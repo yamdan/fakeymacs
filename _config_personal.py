@@ -29,7 +29,7 @@ fc.use_old_Microsoft_IME = True
 fc.use_new_Microsoft_IME = False
 fc.use_Google_IME = False
 
-# 追加機能のオプションの設定
+# 追加機能オプションの設定
 fc.use_clipboardList = True
 fc.use_lancherList = True
 fc.use_edit_mode = False
@@ -76,7 +76,7 @@ fc.emacs_exclusion_key  = {"chrome.exe"       : ["C-l", "C-t"],
                           }
 
 # 左右どちらの Ctrlキーを使うかを指定する（"L": 左、"R": 右）
-fc.side_of_ctrl_key = "R"
+fc.side_of_ctrl_key = "L"
 
 #---------------------------------------------------------------------------------------------------
 # IME を切り替えるキーの組み合わせ（disable、enable の順）を指定する（複数指定可）
