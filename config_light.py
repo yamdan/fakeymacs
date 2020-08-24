@@ -312,7 +312,7 @@ def configure(keymap):
     # IME をトグルで切り替えるキーを指定する（複数指定可）
     fc.toggle_input_method_key = []
     fc.toggle_input_method_key += ["C-Yen"]
-    fc.toggle_input_method_key += ["C-o"]
+    # fc.toggle_input_method_key += ["C-o"]
     # fc.toggle_input_method_key += ["O-LAlt"]
 
     #---------------------------------------------------------------------------------------------------
