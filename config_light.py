@@ -547,18 +547,6 @@ def configure(keymap):
             print("Ctl-xプレフィックスキーのモディファイアキーは、Ctrl または Alt のいずれかから指定してください")
 
     ##################################################
-    ## HandS (Henkan/Muhenkan and Space)
-    ##################################################
-
-    # 変換キーを右シフトキー、無変換キーを左シフトキーに
-    keymap.replaceKey("(28)", "RShift")
-    keymap.replaceKey("(29)", "LShift")
-
-    # それぞれ単独で押したら元の役割(変換/無変換)が機能
-    keymap_emacs["O-RShift"] = "(28)"
-    keymap_emacs["O-LShift"] = "(29)"
-
-    ##################################################
     ## IME の操作
     ##################################################
 
@@ -1717,6 +1705,17 @@ def configure(keymap):
         else:
             define_key(keymap_global, "A-S-Plus",  self_insert_command("({})".format(VK_F24)))
 
+    ##################################################
+    ## HandS (Henkan/Muhenkan and Space)
+    ##################################################
+
+    # 変換キーを右シフトキー、無変換キーを左シフトキーとして使えるように
+    keymap.replaceKey("(28)", "RShift")
+    keymap.replaceKey("(29)", "LShift")
+
+    # それぞれ単独で押した場合は元の役割(変換/無変換)が機能
+    define_key(keymap_global, "O-Rshift", self_insert_command("(28)"))
+    define_key(keymap_global, "O-Lshift", self_insert_command("(29)"))
 
     ###########################################################################
     ## デスクトップの設定
