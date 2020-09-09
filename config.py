@@ -313,6 +313,7 @@ def configure(keymap):
     fc.emacs_exclusion_key  = {"chrome.exe"       : ["C-l", "C-t"],
                                "msedge.exe"       : ["C-l", "C-t"],
                                "firefox.exe"      : ["C-l", "C-t"],
+                               "vivaldi.exe"      : ["C-l", "C-t"],
                               }
 
     # clipboard 監視の対象外とするアプリケーションソフトを指定する
