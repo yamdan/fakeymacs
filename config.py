@@ -2390,17 +2390,25 @@ def configure(keymap):
     # 個人設定ファイルのセクション [section-base-2] を読み込んで実行する
     exec(readConfigPersonal("[section-base-2]"), dict(globals(), **locals()))
 
+    # ##################################################
+    # ## HandS (Henkan/Muhenkan and Shift)
+    # ##################################################
+
+    # # 変換キーを右シフトキー、無変換キーを左シフトキーとして使えるように
+    # keymap.replaceKey("(28)", "RShift")
+    # keymap.replaceKey("(29)", "LShift")
+
+    # # それぞれ単独で押した場合は元の役割(変換/無変換)が機能
+    # define_key(keymap_global, "O-Rshift", self_insert_command("(28)"))
+    # define_key(keymap_global, "O-Lshift", self_insert_command("(29)"))
+
     ##################################################
-    ## HandS (Henkan/Muhenkan and Space)
+    ## SandS (Space and Shift)
     ##################################################
 
-    # 変換キーを右シフトキー、無変換キーを左シフトキーとして使えるように
-    keymap.replaceKey("(28)", "RShift")
-    keymap.replaceKey("(29)", "LShift")
-
-    # それぞれ単独で押した場合は元の役割(変換/無変換)が機能
-    define_key(keymap_global, "O-Rshift", self_insert_command("(28)"))
-    define_key(keymap_global, "O-Lshift", self_insert_command("(29)"))
+    # スペースキーをシフトキーとして使う (いわゆるSandS)
+    keymap.replaceKey("Space", "RShift")
+    define_key(keymap_global, "O-Rshift", self_insert_command("Space"))
 
     ####################################################################################################
     ## クリップボードリストの設定
