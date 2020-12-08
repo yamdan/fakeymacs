@@ -2402,13 +2402,13 @@ def configure(keymap):
     # define_key(keymap_global, "O-Rshift", self_insert_command("(28)"))
     # define_key(keymap_global, "O-Lshift", self_insert_command("(29)"))
 
-    ##################################################
-    ## SandS (Space and Shift)
-    ##################################################
+    # ##################################################
+    # ## SandS (Space and Shift)
+    # ##################################################
 
-    # スペースキーをシフトキーとして使う (いわゆるSandS)
-    keymap.replaceKey("Space", "RShift")
-    define_key(keymap_global, "O-Rshift", self_insert_command("Space"))
+    # # スペースキーをシフトキーとして使う (いわゆるSandS)
+    # keymap.replaceKey("Space", "RShift")
+    # define_key(keymap_global, "O-Rshift", self_insert_command("Space"))
 
     ####################################################################################################
     ## クリップボードリストの設定
