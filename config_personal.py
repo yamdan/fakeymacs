@@ -97,13 +97,16 @@ fc.set_input_method_key += [["(29)", "(28)"]]
 ## LAlt の単押しで英数入力、RAlt の単押しで日本語入力となる
 ## （JetBrains 製の IDE でこの設定を利用するためには、ツールボタンをオンにする必要があるようです。
 ##   設定は、View -> Appearance -> Tool Window Bars を有効にしてください。）
-# fc.set_input_method_key += [["O-LAlt", "O-RAlt"]]
+fc.set_input_method_key += [["O-LAlt", "O-RAlt"]]
 
 ## C-j や C-j C-j で 英数入力となる（toggle_input_method_key の設定と併せ、C-j C-o で日本語入力となる）
 # fc.set_input_method_key += [["C-j", None]]
 
 ## C-j で英数入力、C-o で日本語入力となる（toggle_input_method_key の設定より優先）
-# fc.set_input_method_key += [["C-j", "C-o"]]
+fc.set_input_method_key += [["C-j", "C-o"]]
+
+## 日本語キーボードを英語キーボードとして利用している場合の<無変換>と<変換>
+fc.set_input_method_key += [["(235)", "(255)"]]
 #---------------------------------------------------------------------------------------------------
 
 # VSCode の Terminal内 で ４つのキー（Ctrl+k、Ctrl+r、Ctrl+s、Ctrl+y）のダイレクト入力機能を使うか
