@@ -105,8 +105,8 @@ fc.set_input_method_key += [["O-LAlt", "O-RAlt"]]
 ## C-j で英数入力、C-o で日本語入力となる（toggle_input_method_key の設定より優先）
 fc.set_input_method_key += [["C-j", "C-o"]]
 
-## 日本語キーボードを英語キーボードとして利用している場合の<無変換>と<変換>
-fc.set_input_method_key += [["(235)", "(255)"]]
+# ## 日本語キーボードを英語キーボードとして利用している場合の<無変換>と<変換>
+# fc.set_input_method_key += [["(235)", "(255)"]]
 #---------------------------------------------------------------------------------------------------
 
 # VSCode の Terminal内 で ４つのキー（Ctrl+k、Ctrl+r、Ctrl+s、Ctrl+y）のダイレクト入力機能を使うか
@@ -119,6 +119,23 @@ fc.set_input_method_key += [["(235)", "(255)"]]
 # fc.application_key = "W-m"
 
 # [section-base-2] ---------------------------------------------------------------------------------
+##################################################
+## HandS (Henkan/Muhenkan and Shift)
+##################################################
+
+# 変換キーを右シフトキー、無変換キーを左シフトキーとして使えるように
+# それぞれ単独で押した場合は元の役割(変換/無変換)が機能
+
+if is_japanese_keyboard:
+    keymap.replaceKey("(28)", "RShift")
+    keymap.replaceKey("(29)", "LShift")
+    define_key(keymap_global, "O-Rshift", self_insert_command("(28)"))
+    define_key(keymap_global, "O-Lshift", self_insert_command("(29)"))
+else:
+    keymap.replaceKey("(255)", "RShift")
+    keymap.replaceKey("(235)", "LShift")
+    define_key(keymap_global, "O-Rshift", enable_input_method)
+    define_key(keymap_global, "O-Lshift", disable_input_method)
 
 ####################################################################################################
 ## クリップボードリストの設定
