@@ -325,6 +325,7 @@ def configure(keymap):
     fc.emacs_exclusion_key  = {"chrome.exe"       : ["C-l", "C-t"],
                                "msedge.exe"       : ["C-l", "C-t"],
                                "firefox.exe"      : ["C-l", "C-t"],
+                               "Code.exe"         : ["C-S-b", "C-S-f", "C-S-p", "C-S-n", "C-S-a", "C-S-e"],
                               }
 
     # clipboard 監視の対象外とするアプリケーションソフトを指定する
@@ -1681,11 +1682,10 @@ def configure(keymap):
     define_key(keymap_emacs, "C-S-f", reset_search(reset_undo(reset_counter(mark2(repeat(forward_char), True)))))
     define_key(keymap_emacs, "M-S-b", reset_search(reset_undo(reset_counter(mark2(repeat(backward_word), False)))))
     define_key(keymap_emacs, "M-S-f", reset_search(reset_undo(reset_counter(mark2(repeat(forward_word), True)))))
-    ### vscode のコマンドパレット(C-S-p)と競合するので削除。マークがあればここら辺はいらないはず。
-    #define_key(keymap_emacs, "C-S-p", reset_search(reset_undo(reset_counter(mark2(repeat(previous_line), False)))))
-    #define_key(keymap_emacs, "C-S-n", reset_search(reset_undo(reset_counter(mark2(repeat(next_line), True)))))
-    #define_key(keymap_emacs, "C-S-a", reset_search(reset_undo(reset_counter(mark2(move_beginning_of_line, False)))))
-    #define_key(keymap_emacs, "C-S-e", reset_search(reset_undo(reset_counter(mark2(move_end_of_line, True)))))
+    define_key(keymap_emacs, "C-S-p", reset_search(reset_undo(reset_counter(mark2(repeat(previous_line), False)))))
+    define_key(keymap_emacs, "C-S-n", reset_search(reset_undo(reset_counter(mark2(repeat(next_line), True)))))
+    define_key(keymap_emacs, "C-S-a", reset_search(reset_undo(reset_counter(mark2(move_beginning_of_line, False)))))
+    define_key(keymap_emacs, "C-S-e", reset_search(reset_undo(reset_counter(mark2(move_end_of_line, True)))))
 
     define_key(keymap_emacs, "Left",     reset_search(reset_undo(reset_counter(mark(repeat(backward_char), False)))))
     define_key(keymap_emacs, "Right",    reset_search(reset_undo(reset_counter(mark(repeat(forward_char), True)))))
@@ -2389,6 +2389,7 @@ def configure(keymap):
 
     # 個人設定ファイルのセクション [section-base-2] を読み込んで実行する
     exec(readConfigPersonal("[section-base-2]"), dict(globals(), **locals()))
+
 
     ####################################################################################################
     ## クリップボードリストの設定
